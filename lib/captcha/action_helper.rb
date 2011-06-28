@@ -37,5 +37,11 @@ module Captcha
       img.write("#{APP_IMAGE_PATH}/captcha_output.jpg")
       text
     end
+
+    def ActionHelper.copy_refresh_image
+      unless File.file?("#{APP_IMAGE_PATH}/refresh.png")
+        FileUtils.cp "#{CAPTCHA_IMAGE_PATH}/refresh.png","#{APP_IMAGE_PATH}/refresh.png"
+      end
+    end
   end
 end
