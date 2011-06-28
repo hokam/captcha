@@ -17,21 +17,8 @@ Plugin installation :
 
     script/plugin install git://github.com/hokam/captcha.git
 
-Copy Captcha images to the application public/images folder :
-
-    rake copy_captcha_images
-
-
 Uninstallation
 ==============
-
-Uninstallation process.
-
-Remove captcha image from application public/images folder :
-
-    rake remove_captcha_images
-
-Plugin uninstallation :
 
     script/plugin remove captcha
 
