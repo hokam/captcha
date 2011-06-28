@@ -20,7 +20,7 @@ module Captcha
     end
 
     def get_random_image
-      MiniMagick::Image.open("#{::Rails.public_path}/images/captcha_#{rand(12)}.jpg")
+      MiniMagick::Image.open("#{CAPTCHA_IMAGE_PATH}/captcha_#{rand(12)}.jpg")
     end
 
     def create_image_with_text(len)
@@ -34,7 +34,7 @@ module Captcha
         c.font 'Times New Roman'
         c.pointsize '30'
       end
-      img.write("#{::Rails.public_path}/images/captcha_output.jpg")
+      img.write("#{APP_IMAGE_PATH}/captcha_output.jpg")
       text
     end
   end

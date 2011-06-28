@@ -4,7 +4,7 @@ module Captcha
     include ActionHelper
     def create_captcha
       @secret = Digest::SHA2.hexdigest(create_image_with_text(6))
-      @image_asset_id = File.mtime("#{::Rails.public_path}/images/captcha_output.jpg").to_i.to_s
+      @image_asset_id = File.mtime("#{APP_IMAGE_PATH}/captcha_output.jpg").to_i.to_s
     end
 
     def validate_captcha
